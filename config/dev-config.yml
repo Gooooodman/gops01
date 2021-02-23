@@ -1,0 +1,77 @@
+# development
+system:
+  # url前缀
+  url-path-prefix: api
+  # gin模式 debug|release
+  app-mode: release
+  # 开启全局事务管理器
+  transaction: true
+  # 操作日志key
+  operation-log-key: operlog_response
+  # 程序监听端口
+  port: 9000
+
+mysql:
+  # 用户名
+  username: root
+  # 密码
+  password: pYa0ling
+  # 数据库名
+  database: gops01
+  # 主机地址
+  host: 10.2.30.58
+  # 端口
+  port: 3306
+  # 连接字符串查询参数
+  query: charset=utf8&parseTime=True&loc=Local&timeout=10000ms
+  # 是否打印SQL日志
+  log-mode: true
+  # 数据库表前缀
+  table-prefix:
+  # 编码方式
+  charset: utf8mb4
+  # 字符集
+  collation: utf8mb4_general_ci
+
+redis:
+  # 地址
+  host: 10.2.30.58
+  # 密码
+  password: Ya0ling
+  # 数据库index
+  db: 9
+  # 端口
+  port: 6379
+
+# casbin配置
+casbin:
+  # 模型配置文件, 默认以conf目录为根目录
+  model-path: 'rbac_model.conf'
+  # 自动加载策略延迟（秒）
+  load-delay: 60
+
+logs:
+  # 日志等级(-1:Debug, 0:Info, -1<=level<=5, 参照zap.level源码)
+  level: -1
+  # 日志路径
+  path: logs
+  # 文件最大大小, M
+  max-size: 50
+  # 备份数
+  max-backups: 100
+  # 存放时间, 天
+  max-age: 30
+  # 是否压缩
+  compress: false
+
+# jwt配置
+jwt:
+  # jwt标识
+  realm: gops01
+  # 服务端密钥
+  key: vFr3RRkxlBG0ggRYLG
+  # token过期时间, 小时
+  timeout: 4
+  # token更新时间, 小时
+  max-refresh: 4
+
